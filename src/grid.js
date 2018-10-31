@@ -1,5 +1,4 @@
 
-
 class Neighbors extends Map {
 
     get E() { return this.get(0) }
@@ -111,6 +110,4 @@ class Grid {
 
 Object.assign(window, { Grid, Cell })
 
-let grid = new Grid(10, 10)
-
-Object.assign(window, { grid })
+export { Grid, Cell }
