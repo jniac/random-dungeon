@@ -1,25 +1,31 @@
 
 
-class Neighbors extends Array {
+class Neighbors extends Map {
 
-    get E() { return this[0] }
-    set E(value) { this[0] = value }
-    get SE() { return this[1] }
-    set SE(value) { this[1] = value }
-    get S() { return this[2] }
-    set S(value) { this[2] = value }
-    get SW() { return this[3] }
-    set SW(value) { this[3] = value }
-    get W() { return this[4] }
-    set W(value) { this[4] = value }
-    get NW() { return this[5] }
-    set NW(value) { this[5] = value }
-    get N() { return this[6] }
-    set N(value) { this[6] = value }
-    get NE() { return this[7] }
-    set NE(value) { this[7] = value }
+    get E() { return this.get(0) }
+    set E(value) { this.set(0, value) }
+    get SE() { return this.get(1) }
+    set SE(value) { this.set(1, value) }
+    get S() { return this.get(2) }
+    set S(value) { this.set(2, value) }
+    get SW() { return this.get(3) }
+    set SW(value) { this.set(3, value) }
+    get W() { return this.get(4) }
+    set W(value) { this.set(4, value) }
+    get NW() { return this.get(5) }
+    set NW(value) { this.set(5, value) }
+    get N() { return this.get(6) }
+    set N(value) { this.set(6, value) }
+    get NE() { return this.get(7) }
+    set NE(value) { this.set(7, value) }
 
 }
+
+Object.defineProperty(Neighbors.prototype, Symbol.iterator, {
+
+    value: function() { return this.values() },
+
+})
 
 class Cell {
 
